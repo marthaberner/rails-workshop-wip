@@ -1,0 +1,17 @@
+<h1>Editing <%= @post.title %></h1>
+
+<%= form_for @post do |f| %>
+<p>
+  <%= f.label :author, class: 'form-label' %>:
+  <%= f.text_field :author %>
+</p>
+<p>
+  <%= f.label :title, class: 'form-label' %>:
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :body, class: 'form-label' %>
+  <%= f.text_area :body %><br />
+</p>
+  <%= f.submit %>
+<% end %>

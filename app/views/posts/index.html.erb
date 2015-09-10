@@ -3,7 +3,18 @@
 <%= link_to "New Post", new_post_path %>
 
 <% @posts.each do |post| %>
-  <%= post.author %>
+<li>
+  <%= link_to post.author, post_path(post) %>
+</li>
+<li>
   <%= post.title %>
+</li>
+<li>
   <%= post.body %>
+</li>
+<li>
+  <% post.comments.each do |comment| %>
+    <li><%= comment.comment %></li>
+  <% end %>
+</li>
 <% end %>

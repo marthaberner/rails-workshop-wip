@@ -15,8 +15,30 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
 
-    ### Demo why we have duplicates by going into rails c - show how to validate uniqueness in the model
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post  = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private

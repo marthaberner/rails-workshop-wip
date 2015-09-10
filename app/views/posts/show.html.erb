@@ -1,0 +1,14 @@
+<h1>Showing <%= @post.title %></h1>
+<li>
+<%= @post.author %>
+</li>
+<li>
+<%= @post.title %>
+</li>
+<li>
+<%= @post.body %>
+</li>
+
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post), method: :delete %>
+<%= link_to "Add Post", new_post_comment_path(@post) %>
