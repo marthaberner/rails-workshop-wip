@@ -1,0 +1,9 @@
+<h1>Viewing Posts</h1>
+
+<%= link_to "New Post", new_post_path %>
+
+<% @posts.each do |post| %>
+  <%= post.author %>
+  <%= post.title %>
+  <%= post.body %>
+<% end %>
